@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on darwin)" generated="20201030 20:41:14.294" rpa="false">
+<suite id="s1" name="Login" source="/Users/qa/automate/Tests/Login">
+<suite id="s1-s1" name="Login" source="/Users/qa/automate/Tests/Login/login.robot">
+<test id="s1-s1-t1" name="The User should be able to see Homepage.">
+<kw name="Open Home Page" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201030 20:41:14.970" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201030 20:41:20.735" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201030 20:41:20.384" endtime="20201030 20:41:20.735"></status>
+</kw>
+<msg timestamp="20201030 20:41:20.745" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" starttime="20201030 20:41:14.970" endtime="20201030 20:41:20.746"></status>
+</kw>
+<status status="FAIL" starttime="20201030 20:41:14.969" endtime="20201030 20:41:20.746"></status>
+</kw>
+<status status="FAIL" starttime="20201030 20:41:14.968" endtime="20201030 20:41:20.747" critical="yes">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<doc>A test case with a test for user is able to login
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" starttime="20201030 20:41:14.338" endtime="20201030 20:41:20.749"></status>
+</suite>
+<status status="FAIL" starttime="20201030 20:41:14.297" endtime="20201030 20:41:20.752"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Login">Login</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Login">Login.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
