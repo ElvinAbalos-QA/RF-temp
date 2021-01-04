@@ -15,7 +15,7 @@ The Admin should be able to see Homepage.
     Input Text      xpath://*[@id="root"]/div/form/div[1]/div[1]/input      ${ADMIN_EMAIL}
     Input Text      xpath://*[@id="root"]/div/form/div[1]/div[2]/input      ${ADMIN_PASSWORD}
     Click Button    LOG IN
-    Wait
+    Wait Until Element Is Visible       xpath://*[@id="root"]/div/div[1]/div[2]/button
     Click Button      xpath://*[@id="root"]/div/div[1]/div[2]/button
     Wait
     Click Button        Yes
