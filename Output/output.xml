@@ -1,205 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.0 on darwin)" generated="20210104 10:24:30.116" rpa="false">
-<suite id="s1" name="Dj Login" source="/Users/qa/RF/mbc-web/Tests/Login/dj_login.robot">
-<test id="s1-t1" name="The DJ should be able to see Homepage.">
+<robot generator="Robot 3.2.2 (Python 3.9.0 on darwin)" generated="20210104 11:15:06.424" rpa="false">
+<suite id="s1" name="Admin Login" source="/Users/qa/RF/mbc-web/Tests/Login/admin_login.robot">
+<test id="s1-t1" name="The Admin should be able to see Homepage.">
 <kw name="Open MBC Web Page" library="resources">
-<msg timestamp="20210104 10:24:30.346" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:06.633" level="TRACE">Arguments: [  ]</msg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:30.347" level="TRACE">Arguments: [ 'http://mbc-admin.bliimo.com/' | 'chrome' ]</msg>
-<msg timestamp="20210104 10:24:30.348" level="INFO">Opening browser 'chrome' to base url 'http://mbc-admin.bliimo.com/'.</msg>
-<msg timestamp="20210104 10:24:31.375" level="DEBUG">POST http://127.0.0.1:51300/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
-<msg timestamp="20210104 10:24:31.376" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:51300</msg>
-<msg timestamp="20210104 10:24:33.268" level="DEBUG">http://127.0.0.1:51300 "POST /session HTTP/1.1" 200 726</msg>
-<msg timestamp="20210104 10:24:33.270" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:33.270" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/timeouts {"script": 5000}</msg>
-<msg timestamp="20210104 10:24:33.274" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/timeouts HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:33.275" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:33.276" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/timeouts {"implicit": 0}</msg>
-<msg timestamp="20210104 10:24:33.279" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/timeouts HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:33.280" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:33.281" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/url {"url": "http://mbc-admin.bliimo.com/"}</msg>
-<msg timestamp="20210104 10:24:37.705" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/url HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:37.706" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:37.707" level="DEBUG">Opened browser with session id 506ce72cefe76deb2366470b5d9862ff.</msg>
-<msg timestamp="20210104 10:24:37.708" level="TRACE">Return: 1</msg>
-<status status="PASS" starttime="20210104 10:24:30.347" endtime="20210104 10:24:37.708"></status>
+<msg timestamp="20210104 11:15:06.634" level="TRACE">Arguments: [ 'http://mbc-admin.bliimo.com/' | 'firefox' ]</msg>
+<msg timestamp="20210104 11:15:06.634" level="INFO">Opening browser 'firefox' to base url 'http://mbc-admin.bliimo.com/'.</msg>
+<msg timestamp="20210104 11:15:06.637" level="INFO">Firefox driver log is always forced to to: /Users/qa/RF/mbc-web/Output/geckodriver-22.log</msg>
+<msg timestamp="20210104 11:15:06.666" level="DEBUG">POST http://127.0.0.1:53782/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "firefox", "acceptInsecureCerts": true, "moz:firefoxOptions": {"profile": "UEsDBBQAAAAIAONZJFI+3NKsfgMAAM0MAAAHAAAAdXNlci5qc6VWTW/UMBC98ytQTyCx1rbABU6lFAkJUcSq4mg59mTjrmMbe7zp/nvGyaYsbb6AWz7e89hvZt44RQjcByhfnBXBNfTGlKtZo61yDVOp9gysKAyos1fPMSR4+f5ZesoxAiGEZE/ApTBxBG2hQVGwFAzhzkThEr4rjLC7sym8F1tYtn5EETB5lhmEXE+jKlfDEblgL49Z3O3p5FoBqyM6266it9YFGFmAPqkb+6MVOJ6vmbYY3O33L9Phc1Jqcc9lFSgwjzJoj5wU56jrHPT1epiwDBnAu4BcGMPvIod7CR61s3Ew6XdiL7plmetgLFau+Wyv6NEZGCRZwMaFHZOCKHtY5XjCrAiw13ImrxFkChoPTMa+HEeAj5PTgJFZr9lSm2IyoZTO5xQzizRQqECHC1zIrCBPlNsUERSXEHBYzRNSjClHfCBp+gBhhtXpwa3IsnLYgx0JJLxnySvqVCYSumEFT0CLWk3p6I04gLo+X2++OqRcEuHNCNg11jihqDAtaRzasvlRgd1k9bXdTse6vv1yyfp2m7SjFvmadVmYsy5td1THYKnsycS6JF/MYcmSOo8cB7uyJPxIpfagAEJlZQBB0k4/6RDxkrSQI230YEOihPaZVFtoiqeMWphGhKV2CiLI6lgWc1BTxuRzc/f2PuajEGO2DiSnJBXayi/J27gMIlYzUSowhskK5O4jlCIZ/ND9mabRDImMjm1v7JVxceYoJ+gbyvgwmBQRnXdmVSsQBqvunS1ytgl+8rlVrv+R3Ucvc0F9T3+/feO22/xRdp7+F/vwzmh5YPnjJhW1bvP8v/xv7cfL3w09tAzs0TkTGTmEC8eNT15f8ugjB2sNtG1rRXPGbnlWfjhG9gjbFm5roh878kYSO7vu+XoUXhgnd0ZHnK6IE0Zb4Feu9mTthTZ5AFq9rdAcZqlLLPwp3JJ/l4fb0UY6GfxTqvajvnP51dEHVzRiMcXhlXtKhUjXtkrH6rDKvz3NxJUBu8VsCRdv3/5J65emqUX5MMY1vDhw1XnC4N48WYzHmLub104Js/DmUWoD9MRc0NQWvKvRfJmawUcMWiJ/TBsKlW+NlqywhrqAsGlfR+TKZb7TyI6y9eP0WMqDB+8pCIYiYDiwTor25Bdz2EmRnsID3LXjbHAn916T7VO2WD4y1QS5PzF+Jh3GIvymNJWmMLmLBhi/AFBLAQIUAxQAAAAIAONZJFI+3NKsfgMAAM0MAAAHAAAAAAAAAAAAAACkgQAAAAB1c2VyLmpzUEsFBgAAAAABAAEANQAAAKMDAAAAAA=="}}}, "desiredCapabilities": {"browserName": "firefox", "acceptInsecureCerts": true, "marionette": true, "moz:firefoxOptions": {"profile": "UEsDBBQAAAAIAONZJFI+3NKsfgMAAM0MAAAHAAAAdXNlci5qc6VWTW/UMBC98ytQTyCx1rbABU6lFAkJUcSq4mg59mTjrmMbe7zp/nvGyaYsbb6AWz7e89hvZt44RQjcByhfnBXBNfTGlKtZo61yDVOp9gysKAyos1fPMSR4+f5ZesoxAiGEZE/ApTBxBG2hQVGwFAzhzkThEr4rjLC7sym8F1tYtn5EETB5lhmEXE+jKlfDEblgL49Z3O3p5FoBqyM6266it9YFGFmAPqkb+6MVOJ6vmbYY3O33L9Phc1Jqcc9lFSgwjzJoj5wU56jrHPT1epiwDBnAu4BcGMPvIod7CR61s3Ew6XdiL7plmetgLFau+Wyv6NEZGCRZwMaFHZOCKHtY5XjCrAiw13ImrxFkChoPTMa+HEeAj5PTgJFZr9lSm2IyoZTO5xQzizRQqECHC1zIrCBPlNsUERSXEHBYzRNSjClHfCBp+gBhhtXpwa3IsnLYgx0JJLxnySvqVCYSumEFT0CLWk3p6I04gLo+X2++OqRcEuHNCNg11jihqDAtaRzasvlRgd1k9bXdTse6vv1yyfp2m7SjFvmadVmYsy5td1THYKnsycS6JF/MYcmSOo8cB7uyJPxIpfagAEJlZQBB0k4/6RDxkrSQI230YEOihPaZVFtoiqeMWphGhKV2CiLI6lgWc1BTxuRzc/f2PuajEGO2DiSnJBXayi/J27gMIlYzUSowhskK5O4jlCIZ/ND9mabRDImMjm1v7JVxceYoJ+gbyvgwmBQRnXdmVSsQBqvunS1ytgl+8rlVrv+R3Ucvc0F9T3+/feO22/xRdp7+F/vwzmh5YPnjJhW1bvP8v/xv7cfL3w09tAzs0TkTGTmEC8eNT15f8ugjB2sNtG1rRXPGbnlWfjhG9gjbFm5roh878kYSO7vu+XoUXhgnd0ZHnK6IE0Zb4Feu9mTthTZ5AFq9rdAcZqlLLPwp3JJ/l4fb0UY6GfxTqvajvnP51dEHVzRiMcXhlXtKhUjXtkrH6rDKvz3NxJUBu8VsCRdv3/5J65emqUX5MMY1vDhw1XnC4N48WYzHmLub104Js/DmUWoD9MRc0NQWvKvRfJmawUcMWiJ/TBsKlW+NlqywhrqAsGlfR+TKZb7TyI6y9eP0WMqDB+8pCIYiYDiwTor25Bdz2EmRnsID3LXjbHAn916T7VO2WD4y1QS5PzF+Jh3GIvymNJWmMLmLBhi/AFBLAQIUAxQAAAAIAONZJFI+3NKsfgMAAM0MAAAHAAAAAAAAAAAAAACkgQAAAAB1c2VyLmpzUEsFBgAAAAABAAEANQAAAKMDAAAAAA=="}}}</msg>
+<msg timestamp="20210104 11:15:06.667" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:53782</msg>
+<msg timestamp="20210104 11:15:10.035" level="DEBUG">http://127.0.0.1:53782 "POST /session HTTP/1.1" 200 736</msg>
+<msg timestamp="20210104 11:15:10.035" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:10.036" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/timeouts {"script": 5000}</msg>
+<msg timestamp="20210104 11:15:10.040" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:10.040" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:10.040" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/timeouts {"implicit": 0}</msg>
+<msg timestamp="20210104 11:15:10.043" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:10.043" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:10.044" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/url {"url": "http://mbc-admin.bliimo.com/"}</msg>
+<msg timestamp="20210104 11:15:12.947" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:12.948" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:12.948" level="DEBUG">Opened browser with session id 7f884086-eae9-914f-a25f-30d01e74cc95.</msg>
+<msg timestamp="20210104 11:15:12.948" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20210104 11:15:06.633" endtime="20210104 11:15:12.948"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<msg timestamp="20210104 10:24:37.710" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20210104 10:24:37.710" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/window/maximize {}</msg>
-<msg timestamp="20210104 10:24:37.860" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/window/maximize HTTP/1.1" 200 50</msg>
-<msg timestamp="20210104 10:24:37.861" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:37.861" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:37.709" endtime="20210104 10:24:37.861"></status>
+<msg timestamp="20210104 11:15:12.950" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:12.950" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/window/maximize {}</msg>
+<msg timestamp="20210104 11:15:13.430" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/window/maximize HTTP/1.1" 200 50</msg>
+<msg timestamp="20210104 11:15:13.431" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.431" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:12.949" endtime="20210104 11:15:13.431"></status>
 </kw>
-<msg timestamp="20210104 10:24:37.861" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:30.346" endtime="20210104 10:24:37.861"></status>
+<msg timestamp="20210104 11:15:13.431" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:06.632" endtime="20210104 11:15:13.431"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>${TITLE}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:37.862" level="TRACE">Arguments: [ 'MBC Web Admin' ]</msg>
-<msg timestamp="20210104 10:24:37.862" level="DEBUG">GET http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/title {}</msg>
-<msg timestamp="20210104 10:24:37.868" level="DEBUG">http://127.0.0.1:51300 "GET /session/506ce72cefe76deb2366470b5d9862ff/title HTTP/1.1" 200 25</msg>
-<msg timestamp="20210104 10:24:37.868" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:37.868" level="INFO">Page title is 'MBC Web Admin'.</msg>
-<msg timestamp="20210104 10:24:37.868" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:37.862" endtime="20210104 10:24:37.868"></status>
+<msg timestamp="20210104 11:15:13.432" level="TRACE">Arguments: [ 'MBC Web Admin' ]</msg>
+<msg timestamp="20210104 11:15:13.433" level="DEBUG">GET http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/title {}</msg>
+<msg timestamp="20210104 11:15:13.437" level="DEBUG">http://127.0.0.1:53782 "GET /session/7f884086-eae9-914f-a25f-30d01e74cc95/title HTTP/1.1" 200 25</msg>
+<msg timestamp="20210104 11:15:13.438" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.438" level="INFO">Page title is 'MBC Web Admin'.</msg>
+<msg timestamp="20210104 11:15:13.438" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:13.432" endtime="20210104 11:15:13.438"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://*[@id="root"]/div/form/div[1]/div[1]/input</arg>
-<arg>${DJ_EMAIL}</arg>
+<arg>${ADMIN_EMAIL}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:37.869" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input' | 'rufo.gabrillo61@gmail.com' ]</msg>
-<msg timestamp="20210104 10:24:37.869" level="INFO">Typing text 'rufo.gabrillo61@gmail.com' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input'.</msg>
-<msg timestamp="20210104 10:24:37.869" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[1]/input"}</msg>
-<msg timestamp="20210104 10:24:37.886" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20210104 10:24:37.886" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:37.886" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/element/0374436a-e25b-4987-b5c4-0d24d1ff8c15/clear {"id": "0374436a-e25b-4987-b5c4-0d24d1ff8c15"}</msg>
-<msg timestamp="20210104 10:24:37.918" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/element/0374436a-e25b-4987-b5c4-0d24d1ff8c15/clear HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:37.918" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:37.918" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/element/0374436a-e25b-4987-b5c4-0d24d1ff8c15/value {"text": "rufo.gabrillo61@gmail.com", "value": ["r", "u", "f", "o", ".", "g", "a", "b", "r", "i", "l", "l", "o", "6", "1", "@", "g", "m", "a", "i", "l", ".", "c", "o", "m"], "id": "0374436a-e25b-4987-b5c4-0d24d1ff8c15"}</msg>
-<msg timestamp="20210104 10:24:38.092" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/element/0374436a-e25b-4987-b5c4-0d24d1ff8c15/value HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:38.093" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.093" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:37.869" endtime="20210104 10:24:38.093"></status>
+<msg timestamp="20210104 11:15:13.439" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input' | 'dev.bliimo@gmail.com' ]</msg>
+<msg timestamp="20210104 11:15:13.440" level="INFO">Typing text 'dev.bliimo@gmail.com' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input'.</msg>
+<msg timestamp="20210104 11:15:13.441" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[1]/input"}</msg>
+<msg timestamp="20210104 11:15:13.451" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:13.451" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.452" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/e47085af-a716-ce4b-96ac-008273691160/clear {"id": "e47085af-a716-ce4b-96ac-008273691160"}</msg>
+<msg timestamp="20210104 11:15:13.459" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/e47085af-a716-ce4b-96ac-008273691160/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:13.459" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.459" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/e47085af-a716-ce4b-96ac-008273691160/value {"text": "dev.bliimo@gmail.com", "value": ["d", "e", "v", ".", "b", "l", "i", "i", "m", "o", "@", "g", "m", "a", "i", "l", ".", "c", "o", "m"], "id": "e47085af-a716-ce4b-96ac-008273691160"}</msg>
+<msg timestamp="20210104 11:15:13.523" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/e47085af-a716-ce4b-96ac-008273691160/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:13.524" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.524" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:13.439" endtime="20210104 11:15:13.524"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://*[@id="root"]/div/form/div[1]/div[2]/input</arg>
-<arg>${DJ_PASSWORD}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:38.094" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input' | 'Password@123' ]</msg>
-<msg timestamp="20210104 10:24:38.094" level="INFO">Typing text 'Password@123' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input'.</msg>
-<msg timestamp="20210104 10:24:38.095" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[2]/input"}</msg>
-<msg timestamp="20210104 10:24:38.114" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20210104 10:24:38.114" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.114" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/element/302908a3-8019-4e43-8692-78e947b7ce58/clear {"id": "302908a3-8019-4e43-8692-78e947b7ce58"}</msg>
-<msg timestamp="20210104 10:24:38.147" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/element/302908a3-8019-4e43-8692-78e947b7ce58/clear HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:38.147" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.147" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/element/302908a3-8019-4e43-8692-78e947b7ce58/value {"text": "Password@123", "value": ["P", "a", "s", "s", "w", "o", "r", "d", "@", "1", "2", "3"], "id": "302908a3-8019-4e43-8692-78e947b7ce58"}</msg>
-<msg timestamp="20210104 10:24:38.246" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/element/302908a3-8019-4e43-8692-78e947b7ce58/value HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:38.247" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.247" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:38.094" endtime="20210104 10:24:38.247"></status>
+<msg timestamp="20210104 11:15:13.525" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input' | 'Password@123' ]</msg>
+<msg timestamp="20210104 11:15:13.525" level="INFO">Typing text 'Password@123' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input'.</msg>
+<msg timestamp="20210104 11:15:13.525" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[2]/input"}</msg>
+<msg timestamp="20210104 11:15:13.531" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:13.531" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.531" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/1951ef2e-f81a-574e-85cb-aa381166679f/clear {"id": "1951ef2e-f81a-574e-85cb-aa381166679f"}</msg>
+<msg timestamp="20210104 11:15:13.538" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/1951ef2e-f81a-574e-85cb-aa381166679f/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:13.538" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.538" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/1951ef2e-f81a-574e-85cb-aa381166679f/value {"text": "Password@123", "value": ["P", "a", "s", "s", "w", "o", "r", "d", "@", "1", "2", "3"], "id": "1951ef2e-f81a-574e-85cb-aa381166679f"}</msg>
+<msg timestamp="20210104 11:15:13.574" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/1951ef2e-f81a-574e-85cb-aa381166679f/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:13.574" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.575" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:13.524" endtime="20210104 11:15:13.575"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>LOG IN</arg>
 </arguments>
-<msg timestamp="20210104 10:24:38.248" level="TRACE">Arguments: [ 'LOG IN' ]</msg>
-<msg timestamp="20210104 10:24:38.249" level="INFO">Clicking button 'LOG IN'.</msg>
-<msg timestamp="20210104 10:24:38.249" level="DEBUG">GET http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/url {}</msg>
-<msg timestamp="20210104 10:24:38.256" level="DEBUG">http://127.0.0.1:51300 "GET /session/506ce72cefe76deb2366470b5d9862ff/url HTTP/1.1" 200 40</msg>
-<msg timestamp="20210104 10:24:38.257" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.258" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/elements {"using": "xpath", "value": "//input[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or @src='LOG IN' or @src='http://mbc-admin.bliimo.com/LOG IN')]"}</msg>
-<msg timestamp="20210104 10:24:38.269" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/elements HTTP/1.1" 200 12</msg>
-<msg timestamp="20210104 10:24:38.269" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.269" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/elements {"using": "xpath", "value": "//button[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or normalize-space(descendant-or-self::text())='LOG IN')]"}</msg>
-<msg timestamp="20210104 10:24:38.281" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20210104 10:24:38.281" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.281" level="DEBUG">POST http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff/element/9d6e8c52-7202-44aa-a050-d682e6a4500c/click {"id": "9d6e8c52-7202-44aa-a050-d682e6a4500c"}</msg>
-<msg timestamp="20210104 10:24:38.339" level="DEBUG">http://127.0.0.1:51300 "POST /session/506ce72cefe76deb2366470b5d9862ff/element/9d6e8c52-7202-44aa-a050-d682e6a4500c/click HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:38.340" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:38.340" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:38.248" endtime="20210104 10:24:38.341"></status>
+<msg timestamp="20210104 11:15:13.575" level="TRACE">Arguments: [ 'LOG IN' ]</msg>
+<msg timestamp="20210104 11:15:13.575" level="INFO">Clicking button 'LOG IN'.</msg>
+<msg timestamp="20210104 11:15:13.576" level="DEBUG">GET http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/url {}</msg>
+<msg timestamp="20210104 11:15:13.579" level="DEBUG">http://127.0.0.1:53782 "GET /session/7f884086-eae9-914f-a25f-30d01e74cc95/url HTTP/1.1" 200 40</msg>
+<msg timestamp="20210104 11:15:13.580" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.580" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//input[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or @src='LOG IN' or @src='http://mbc-admin.bliimo.com/LOG IN')]"}</msg>
+<msg timestamp="20210104 11:15:13.584" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20210104 11:15:13.584" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.584" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//button[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or normalize-space(descendant-or-self::text())='LOG IN')]"}</msg>
+<msg timestamp="20210104 11:15:13.589" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:13.589" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.590" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/99228452-cfc3-6441-bcbd-69f12e4b6a75/click {"id": "99228452-cfc3-6441-bcbd-69f12e4b6a75"}</msg>
+<msg timestamp="20210104 11:15:13.817" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/99228452-cfc3-6441-bcbd-69f12e4b6a75/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:13.819" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:13.820" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:13.575" endtime="20210104 11:15:13.820"></status>
 </kw>
 <kw name="Wait" library="resources">
-<msg timestamp="20210104 10:24:38.346" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:13.822" level="TRACE">Arguments: [  ]</msg>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${sleep_time}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:38.347" level="TRACE">Arguments: [ '5s' ]</msg>
-<msg timestamp="20210104 10:24:43.348" level="INFO">Slept 5 seconds</msg>
-<msg timestamp="20210104 10:24:43.348" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:38.346" endtime="20210104 10:24:43.348"></status>
+<msg timestamp="20210104 11:15:13.823" level="TRACE">Arguments: [ '5s' ]</msg>
+<msg timestamp="20210104 11:15:18.823" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20210104 11:15:18.823" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:13.822" endtime="20210104 11:15:18.824"></status>
 </kw>
-<msg timestamp="20210104 10:24:43.349" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:38.343" endtime="20210104 10:24:43.349"></status>
+<msg timestamp="20210104 11:15:18.824" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:13.820" endtime="20210104 11:15:18.824"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="root"]/div/div[1]/div[2]/button</arg>
+</arguments>
+<msg timestamp="20210104 11:15:18.825" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/div[1]/div[2]/button' ]</msg>
+<msg timestamp="20210104 11:15:18.825" level="INFO">Clicking button 'xpath://*[@id="root"]/div/div[1]/div[2]/button'.</msg>
+<msg timestamp="20210104 11:15:18.826" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/div[1]/div[2]/button"}</msg>
+<msg timestamp="20210104 11:15:18.834" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:18.834" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:18.835" level="DEBUG">GET http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/d2f5bfe0-88ce-7a4f-bc3b-243341134c13/name {"id": "d2f5bfe0-88ce-7a4f-bc3b-243341134c13"}</msg>
+<msg timestamp="20210104 11:15:18.842" level="DEBUG">http://127.0.0.1:53782 "GET /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/d2f5bfe0-88ce-7a4f-bc3b-243341134c13/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210104 11:15:18.842" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:18.843" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/div[1]/div[2]/button"}</msg>
+<msg timestamp="20210104 11:15:18.850" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:18.850" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:18.850" level="DEBUG">GET http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/d2f5bfe0-88ce-7a4f-bc3b-243341134c13/name {"id": "d2f5bfe0-88ce-7a4f-bc3b-243341134c13"}</msg>
+<msg timestamp="20210104 11:15:18.856" level="DEBUG">http://127.0.0.1:53782 "GET /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/d2f5bfe0-88ce-7a4f-bc3b-243341134c13/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210104 11:15:18.856" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:18.856" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/d2f5bfe0-88ce-7a4f-bc3b-243341134c13/click {"id": "d2f5bfe0-88ce-7a4f-bc3b-243341134c13"}</msg>
+<msg timestamp="20210104 11:15:19.091" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/d2f5bfe0-88ce-7a4f-bc3b-243341134c13/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:19.092" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:19.092" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:18.824" endtime="20210104 11:15:19.092"></status>
+</kw>
+<kw name="Wait" library="resources">
+<msg timestamp="20210104 11:15:19.093" level="TRACE">Arguments: [  ]</msg>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${sleep_time}</arg>
+</arguments>
+<msg timestamp="20210104 11:15:19.094" level="TRACE">Arguments: [ '5s' ]</msg>
+<msg timestamp="20210104 11:15:24.094" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20210104 11:15:24.095" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:19.094" endtime="20210104 11:15:24.095"></status>
+</kw>
+<msg timestamp="20210104 11:15:24.095" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:19.093" endtime="20210104 11:15:24.095"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>Yes</arg>
+</arguments>
+<msg timestamp="20210104 11:15:24.096" level="TRACE">Arguments: [ 'Yes' ]</msg>
+<msg timestamp="20210104 11:15:24.096" level="INFO">Clicking button 'Yes'.</msg>
+<msg timestamp="20210104 11:15:24.097" level="DEBUG">GET http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/url {}</msg>
+<msg timestamp="20210104 11:15:24.102" level="DEBUG">http://127.0.0.1:53782 "GET /session/7f884086-eae9-914f-a25f-30d01e74cc95/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20210104 11:15:24.102" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:24.103" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//input[(@id='Yes' or @name='Yes' or @value='Yes' or @src='Yes' or @src='http://mbc-admin.bliimo.com/Yes')]"}</msg>
+<msg timestamp="20210104 11:15:24.109" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20210104 11:15:24.109" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:24.110" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/elements {"using": "xpath", "value": "//button[(@id='Yes' or @name='Yes' or @value='Yes' or normalize-space(descendant-or-self::text())='Yes')]"}</msg>
+<msg timestamp="20210104 11:15:24.117" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:24.117" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:24.118" level="DEBUG">POST http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/element/c0499a70-fafd-2c4e-b7cf-5788919cc429/click {"id": "c0499a70-fafd-2c4e-b7cf-5788919cc429"}</msg>
+<msg timestamp="20210104 11:15:24.355" level="DEBUG">http://127.0.0.1:53782 "POST /session/7f884086-eae9-914f-a25f-30d01e74cc95/element/c0499a70-fafd-2c4e-b7cf-5788919cc429/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:24.356" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:24.356" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:24.096" endtime="20210104 11:15:24.356"></status>
+</kw>
+<kw name="Wait" library="resources">
+<msg timestamp="20210104 11:15:24.358" level="TRACE">Arguments: [  ]</msg>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${sleep_time}</arg>
+</arguments>
+<msg timestamp="20210104 11:15:24.358" level="TRACE">Arguments: [ '5s' ]</msg>
+<msg timestamp="20210104 11:15:29.360" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20210104 11:15:29.360" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:24.358" endtime="20210104 11:15:29.360"></status>
+</kw>
+<msg timestamp="20210104 11:15:29.360" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:24.357" endtime="20210104 11:15:29.360"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20210104 11:15:29.361" level="TRACE">Arguments: [ 'http://mbc-admin.bliimo.com/' ]</msg>
+<msg timestamp="20210104 11:15:29.361" level="DEBUG">GET http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95/url {}</msg>
+<msg timestamp="20210104 11:15:29.364" level="DEBUG">http://127.0.0.1:53782 "GET /session/7f884086-eae9-914f-a25f-30d01e74cc95/url HTTP/1.1" 200 40</msg>
+<msg timestamp="20210104 11:15:29.365" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:29.365" level="INFO">Current location is 'http://mbc-admin.bliimo.com/'.</msg>
+<msg timestamp="20210104 11:15:29.365" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:29.361" endtime="20210104 11:15:29.365"></status>
 </kw>
 <kw name="Close Browsers" library="resources">
-<msg timestamp="20210104 10:24:43.350" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:29.366" level="TRACE">Arguments: [  ]</msg>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<msg timestamp="20210104 10:24:43.350" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20210104 10:24:43.350" level="DEBUG">Closing all browsers.</msg>
-<msg timestamp="20210104 10:24:43.351" level="DEBUG">DELETE http://127.0.0.1:51300/session/506ce72cefe76deb2366470b5d9862ff {}</msg>
-<msg timestamp="20210104 10:24:43.421" level="DEBUG">http://127.0.0.1:51300 "DELETE /session/506ce72cefe76deb2366470b5d9862ff HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:43.423" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:43.481" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:43.350" endtime="20210104 10:24:43.482"></status>
+<msg timestamp="20210104 11:15:29.366" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:29.366" level="DEBUG">Closing all browsers.</msg>
+<msg timestamp="20210104 11:15:29.366" level="DEBUG">DELETE http://127.0.0.1:53782/session/7f884086-eae9-914f-a25f-30d01e74cc95 {}</msg>
+<msg timestamp="20210104 11:15:30.539" level="DEBUG">http://127.0.0.1:53782 "DELETE /session/7f884086-eae9-914f-a25f-30d01e74cc95 HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:30.539" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:30.541" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:29.366" endtime="20210104 11:15:30.541"></status>
 </kw>
-<msg timestamp="20210104 10:24:43.482" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:43.349" endtime="20210104 10:24:43.483"></status>
+<msg timestamp="20210104 11:15:30.541" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:29.365" endtime="20210104 11:15:30.541"></status>
 </kw>
-<status status="PASS" starttime="20210104 10:24:30.345" endtime="20210104 10:24:43.485" critical="yes"></status>
+<status status="PASS" starttime="20210104 11:15:06.631" endtime="20210104 11:15:30.542" critical="yes"></status>
 </test>
-<test id="s1-t2" name="The DJ should be able to see alert &quot;Incorrect e-mail or password.&quot; (negative testing).">
+<test id="s1-t2" name="The Admin should be able to see alert &quot;Incorrect e-mail or password.&quot; (negative testing).">
 <kw name="Open MBC Web Page" library="resources">
-<msg timestamp="20210104 10:24:43.492" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:30.544" level="TRACE">Arguments: [  ]</msg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:43.494" level="TRACE">Arguments: [ 'http://mbc-admin.bliimo.com/' | 'chrome' ]</msg>
-<msg timestamp="20210104 10:24:43.495" level="INFO">Opening browser 'chrome' to base url 'http://mbc-admin.bliimo.com/'.</msg>
-<msg timestamp="20210104 10:24:44.510" level="DEBUG">POST http://127.0.0.1:51331/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
-<msg timestamp="20210104 10:24:44.512" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:51331</msg>
-<msg timestamp="20210104 10:24:45.787" level="DEBUG">http://127.0.0.1:51331 "POST /session HTTP/1.1" 200 726</msg>
-<msg timestamp="20210104 10:24:45.787" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:45.788" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/timeouts {"script": 5000}</msg>
-<msg timestamp="20210104 10:24:45.790" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/timeouts HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:45.790" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:45.791" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/timeouts {"implicit": 0}</msg>
-<msg timestamp="20210104 10:24:45.792" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/timeouts HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:45.793" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:45.793" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/url {"url": "http://mbc-admin.bliimo.com/"}</msg>
-<msg timestamp="20210104 10:24:49.556" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/url HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:49.557" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.558" level="DEBUG">Opened browser with session id d2cb0958d0f0d4213178b21d4af4370e.</msg>
-<msg timestamp="20210104 10:24:49.560" level="TRACE">Return: 1</msg>
-<status status="PASS" starttime="20210104 10:24:43.493" endtime="20210104 10:24:49.560"></status>
+<msg timestamp="20210104 11:15:30.544" level="TRACE">Arguments: [ 'http://mbc-admin.bliimo.com/' | 'firefox' ]</msg>
+<msg timestamp="20210104 11:15:30.545" level="INFO">Opening browser 'firefox' to base url 'http://mbc-admin.bliimo.com/'.</msg>
+<msg timestamp="20210104 11:15:30.547" level="INFO">Firefox driver log is always forced to to: /Users/qa/RF/mbc-web/Output/geckodriver-23.log</msg>
+<msg timestamp="20210104 11:15:31.568" level="DEBUG">POST http://127.0.0.1:53864/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "firefox", "acceptInsecureCerts": true, "moz:firefoxOptions": {"profile": "UEsDBBQAAAAIAO9ZJFI+3NKsfgMAAM0MAAAHAAAAdXNlci5qc6VWTW/UMBC98ytQTyCx1rbABU6lFAkJUcSq4mg59mTjrmMbe7zp/nvGyaYsbb6AWz7e89hvZt44RQjcByhfnBXBNfTGlKtZo61yDVOp9gysKAyos1fPMSR4+f5ZesoxAiGEZE/ApTBxBG2hQVGwFAzhzkThEr4rjLC7sym8F1tYtn5EETB5lhmEXE+jKlfDEblgL49Z3O3p5FoBqyM6266it9YFGFmAPqkb+6MVOJ6vmbYY3O33L9Phc1Jqcc9lFSgwjzJoj5wU56jrHPT1epiwDBnAu4BcGMPvIod7CR61s3Ew6XdiL7plmetgLFau+Wyv6NEZGCRZwMaFHZOCKHtY5XjCrAiw13ImrxFkChoPTMa+HEeAj5PTgJFZr9lSm2IyoZTO5xQzizRQqECHC1zIrCBPlNsUERSXEHBYzRNSjClHfCBp+gBhhtXpwa3IsnLYgx0JJLxnySvqVCYSumEFT0CLWk3p6I04gLo+X2++OqRcEuHNCNg11jihqDAtaRzasvlRgd1k9bXdTse6vv1yyfp2m7SjFvmadVmYsy5td1THYKnsycS6JF/MYcmSOo8cB7uyJPxIpfagAEJlZQBB0k4/6RDxkrSQI230YEOihPaZVFtoiqeMWphGhKV2CiLI6lgWc1BTxuRzc/f2PuajEGO2DiSnJBXayi/J27gMIlYzUSowhskK5O4jlCIZ/ND9mabRDImMjm1v7JVxceYoJ+gbyvgwmBQRnXdmVSsQBqvunS1ytgl+8rlVrv+R3Ucvc0F9T3+/feO22/xRdp7+F/vwzmh5YPnjJhW1bvP8v/xv7cfL3w09tAzs0TkTGTmEC8eNT15f8ugjB2sNtG1rRXPGbnlWfjhG9gjbFm5roh878kYSO7vu+XoUXhgnd0ZHnK6IE0Zb4Feu9mTthTZ5AFq9rdAcZqlLLPwp3JJ/l4fb0UY6GfxTqvajvnP51dEHVzRiMcXhlXtKhUjXtkrH6rDKvz3NxJUBu8VsCRdv3/5J65emqUX5MMY1vDhw1XnC4N48WYzHmLub104Js/DmUWoD9MRc0NQWvKvRfJmawUcMWiJ/TBsKlW+NlqywhrqAsGlfR+TKZb7TyI6y9eP0WMqDB+8pCIYiYDiwTor25Bdz2EmRnsID3LXjbHAn916T7VO2WD4y1QS5PzF+Jh3GIvymNJWmMLmLBhi/AFBLAQIUAxQAAAAIAO9ZJFI+3NKsfgMAAM0MAAAHAAAAAAAAAAAAAACkgQAAAAB1c2VyLmpzUEsFBgAAAAABAAEANQAAAKMDAAAAAA=="}}}, "desiredCapabilities": {"browserName": "firefox", "acceptInsecureCerts": true, "marionette": true, "moz:firefoxOptions": {"profile": "UEsDBBQAAAAIAO9ZJFI+3NKsfgMAAM0MAAAHAAAAdXNlci5qc6VWTW/UMBC98ytQTyCx1rbABU6lFAkJUcSq4mg59mTjrmMbe7zp/nvGyaYsbb6AWz7e89hvZt44RQjcByhfnBXBNfTGlKtZo61yDVOp9gysKAyos1fPMSR4+f5ZesoxAiGEZE/ApTBxBG2hQVGwFAzhzkThEr4rjLC7sym8F1tYtn5EETB5lhmEXE+jKlfDEblgL49Z3O3p5FoBqyM6266it9YFGFmAPqkb+6MVOJ6vmbYY3O33L9Phc1Jqcc9lFSgwjzJoj5wU56jrHPT1epiwDBnAu4BcGMPvIod7CR61s3Ew6XdiL7plmetgLFau+Wyv6NEZGCRZwMaFHZOCKHtY5XjCrAiw13ImrxFkChoPTMa+HEeAj5PTgJFZr9lSm2IyoZTO5xQzizRQqECHC1zIrCBPlNsUERSXEHBYzRNSjClHfCBp+gBhhtXpwa3IsnLYgx0JJLxnySvqVCYSumEFT0CLWk3p6I04gLo+X2++OqRcEuHNCNg11jihqDAtaRzasvlRgd1k9bXdTse6vv1yyfp2m7SjFvmadVmYsy5td1THYKnsycS6JF/MYcmSOo8cB7uyJPxIpfagAEJlZQBB0k4/6RDxkrSQI230YEOihPaZVFtoiqeMWphGhKV2CiLI6lgWc1BTxuRzc/f2PuajEGO2DiSnJBXayi/J27gMIlYzUSowhskK5O4jlCIZ/ND9mabRDImMjm1v7JVxceYoJ+gbyvgwmBQRnXdmVSsQBqvunS1ytgl+8rlVrv+R3Ucvc0F9T3+/feO22/xRdp7+F/vwzmh5YPnjJhW1bvP8v/xv7cfL3w09tAzs0TkTGTmEC8eNT15f8ugjB2sNtG1rRXPGbnlWfjhG9gjbFm5roh878kYSO7vu+XoUXhgnd0ZHnK6IE0Zb4Feu9mTthTZ5AFq9rdAcZqlLLPwp3JJ/l4fb0UY6GfxTqvajvnP51dEHVzRiMcXhlXtKhUjXtkrH6rDKvz3NxJUBu8VsCRdv3/5J65emqUX5MMY1vDhw1XnC4N48WYzHmLub104Js/DmUWoD9MRc0NQWvKvRfJmawUcMWiJ/TBsKlW+NlqywhrqAsGlfR+TKZb7TyI6y9eP0WMqDB+8pCIYiYDiwTor25Bdz2EmRnsID3LXjbHAn916T7VO2WD4y1QS5PzF+Jh3GIvymNJWmMLmLBhi/AFBLAQIUAxQAAAAIAO9ZJFI+3NKsfgMAAM0MAAAHAAAAAAAAAAAAAACkgQAAAAB1c2VyLmpzUEsFBgAAAAABAAEANQAAAKMDAAAAAA=="}}}</msg>
+<msg timestamp="20210104 11:15:31.570" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:53864</msg>
+<msg timestamp="20210104 11:15:34.937" level="DEBUG">http://127.0.0.1:53864 "POST /session HTTP/1.1" 200 736</msg>
+<msg timestamp="20210104 11:15:34.939" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:34.939" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/timeouts {"script": 5000}</msg>
+<msg timestamp="20210104 11:15:34.948" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:34.949" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:34.949" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/timeouts {"implicit": 0}</msg>
+<msg timestamp="20210104 11:15:34.954" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:34.954" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:34.954" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/url {"url": "http://mbc-admin.bliimo.com/"}</msg>
+<msg timestamp="20210104 11:15:38.018" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:38.018" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.019" level="DEBUG">Opened browser with session id 6e5e9a98-f6a9-b249-9285-dd453e634a99.</msg>
+<msg timestamp="20210104 11:15:38.019" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20210104 11:15:30.544" endtime="20210104 11:15:38.019"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<msg timestamp="20210104 10:24:49.562" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20210104 10:24:49.563" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/window/maximize {}</msg>
-<msg timestamp="20210104 10:24:49.713" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/window/maximize HTTP/1.1" 200 50</msg>
-<msg timestamp="20210104 10:24:49.714" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.714" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:49.562" endtime="20210104 10:24:49.714"></status>
+<msg timestamp="20210104 11:15:38.020" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:38.020" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/window/maximize {}</msg>
+<msg timestamp="20210104 11:15:38.517" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/window/maximize HTTP/1.1" 200 50</msg>
+<msg timestamp="20210104 11:15:38.518" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.518" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.020" endtime="20210104 11:15:38.518"></status>
 </kw>
-<msg timestamp="20210104 10:24:49.714" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:43.491" endtime="20210104 10:24:49.714"></status>
+<msg timestamp="20210104 11:15:38.518" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:30.544" endtime="20210104 11:15:38.519"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>${TITLE}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:49.715" level="TRACE">Arguments: [ 'MBC Web Admin' ]</msg>
-<msg timestamp="20210104 10:24:49.715" level="DEBUG">GET http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/title {}</msg>
-<msg timestamp="20210104 10:24:49.721" level="DEBUG">http://127.0.0.1:51331 "GET /session/d2cb0958d0f0d4213178b21d4af4370e/title HTTP/1.1" 200 25</msg>
-<msg timestamp="20210104 10:24:49.721" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.721" level="INFO">Page title is 'MBC Web Admin'.</msg>
-<msg timestamp="20210104 10:24:49.721" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:49.715" endtime="20210104 10:24:49.721"></status>
+<msg timestamp="20210104 11:15:38.520" level="TRACE">Arguments: [ 'MBC Web Admin' ]</msg>
+<msg timestamp="20210104 11:15:38.520" level="DEBUG">GET http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/title {}</msg>
+<msg timestamp="20210104 11:15:38.524" level="DEBUG">http://127.0.0.1:53864 "GET /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/title HTTP/1.1" 200 25</msg>
+<msg timestamp="20210104 11:15:38.525" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.525" level="INFO">Page title is 'MBC Web Admin'.</msg>
+<msg timestamp="20210104 11:15:38.525" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.519" endtime="20210104 11:15:38.525"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -207,19 +299,19 @@
 <arg>xpath://*[@id="root"]/div/form/div[1]/div[1]/input</arg>
 <arg>${ADMIN_INVALID_EMAIL}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:49.722" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input' | 'rufs' ]</msg>
-<msg timestamp="20210104 10:24:49.722" level="INFO">Typing text 'rufs' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input'.</msg>
-<msg timestamp="20210104 10:24:49.722" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[1]/input"}</msg>
-<msg timestamp="20210104 10:24:49.736" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20210104 10:24:49.737" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.737" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/element/4966092d-24b0-468c-bf0a-ca2f81592bd1/clear {"id": "4966092d-24b0-468c-bf0a-ca2f81592bd1"}</msg>
-<msg timestamp="20210104 10:24:49.769" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/element/4966092d-24b0-468c-bf0a-ca2f81592bd1/clear HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:49.769" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.769" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/element/4966092d-24b0-468c-bf0a-ca2f81592bd1/value {"text": "rufs", "value": ["r", "u", "f", "s"], "id": "4966092d-24b0-468c-bf0a-ca2f81592bd1"}</msg>
-<msg timestamp="20210104 10:24:49.889" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/element/4966092d-24b0-468c-bf0a-ca2f81592bd1/value HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:49.889" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.889" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:49.721" endtime="20210104 10:24:49.889"></status>
+<msg timestamp="20210104 11:15:38.526" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input' | 'rufs' ]</msg>
+<msg timestamp="20210104 11:15:38.527" level="INFO">Typing text 'rufs' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[1]/input'.</msg>
+<msg timestamp="20210104 11:15:38.527" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[1]/input"}</msg>
+<msg timestamp="20210104 11:15:38.537" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:38.538" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.539" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/44a08829-bd1a-7045-95af-a897c21c863b/clear {"id": "44a08829-bd1a-7045-95af-a897c21c863b"}</msg>
+<msg timestamp="20210104 11:15:38.545" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/44a08829-bd1a-7045-95af-a897c21c863b/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:38.545" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.545" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/44a08829-bd1a-7045-95af-a897c21c863b/value {"text": "rufs", "value": ["r", "u", "f", "s"], "id": "44a08829-bd1a-7045-95af-a897c21c863b"}</msg>
+<msg timestamp="20210104 11:15:38.571" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/44a08829-bd1a-7045-95af-a897c21c863b/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:38.572" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.572" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.526" endtime="20210104 11:15:38.572"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -227,112 +319,112 @@
 <arg>xpath://*[@id="root"]/div/form/div[1]/div[2]/input</arg>
 <arg>${ADMIN_INVALID_PASSWORD}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:49.891" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input' | 'pass' ]</msg>
-<msg timestamp="20210104 10:24:49.891" level="INFO">Typing text 'pass' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input'.</msg>
-<msg timestamp="20210104 10:24:49.892" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[2]/input"}</msg>
-<msg timestamp="20210104 10:24:49.905" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20210104 10:24:49.905" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.905" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/element/c1575329-eb70-4c71-9256-58c68914ab08/clear {"id": "c1575329-eb70-4c71-9256-58c68914ab08"}</msg>
-<msg timestamp="20210104 10:24:49.936" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/element/c1575329-eb70-4c71-9256-58c68914ab08/clear HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:49.936" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:49.937" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/element/c1575329-eb70-4c71-9256-58c68914ab08/value {"text": "pass", "value": ["p", "a", "s", "s"], "id": "c1575329-eb70-4c71-9256-58c68914ab08"}</msg>
-<msg timestamp="20210104 10:24:50.003" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/element/c1575329-eb70-4c71-9256-58c68914ab08/value HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:50.004" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:50.004" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:49.890" endtime="20210104 10:24:50.004"></status>
+<msg timestamp="20210104 11:15:38.573" level="TRACE">Arguments: [ 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input' | 'pass' ]</msg>
+<msg timestamp="20210104 11:15:38.573" level="INFO">Typing text 'pass' into text field 'xpath://*[@id="root"]/div/form/div[1]/div[2]/input'.</msg>
+<msg timestamp="20210104 11:15:38.574" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements {"using": "xpath", "value": "//*[@id=\"root\"]/div/form/div[1]/div[2]/input"}</msg>
+<msg timestamp="20210104 11:15:38.578" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:38.578" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.578" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/fd761bf1-9255-e347-8ab7-6a395316b964/clear {"id": "fd761bf1-9255-e347-8ab7-6a395316b964"}</msg>
+<msg timestamp="20210104 11:15:38.583" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/fd761bf1-9255-e347-8ab7-6a395316b964/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:38.583" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.583" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/fd761bf1-9255-e347-8ab7-6a395316b964/value {"text": "pass", "value": ["p", "a", "s", "s"], "id": "fd761bf1-9255-e347-8ab7-6a395316b964"}</msg>
+<msg timestamp="20210104 11:15:38.601" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/fd761bf1-9255-e347-8ab7-6a395316b964/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:38.601" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.602" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.573" endtime="20210104 11:15:38.602"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>LOG IN</arg>
 </arguments>
-<msg timestamp="20210104 10:24:50.005" level="TRACE">Arguments: [ 'LOG IN' ]</msg>
-<msg timestamp="20210104 10:24:50.005" level="INFO">Clicking button 'LOG IN'.</msg>
-<msg timestamp="20210104 10:24:50.005" level="DEBUG">GET http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/url {}</msg>
-<msg timestamp="20210104 10:24:50.011" level="DEBUG">http://127.0.0.1:51331 "GET /session/d2cb0958d0f0d4213178b21d4af4370e/url HTTP/1.1" 200 40</msg>
-<msg timestamp="20210104 10:24:50.012" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:50.012" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/elements {"using": "xpath", "value": "//input[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or @src='LOG IN' or @src='http://mbc-admin.bliimo.com/LOG IN')]"}</msg>
-<msg timestamp="20210104 10:24:50.022" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/elements HTTP/1.1" 200 12</msg>
-<msg timestamp="20210104 10:24:50.022" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:50.023" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/elements {"using": "xpath", "value": "//button[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or normalize-space(descendant-or-self::text())='LOG IN')]"}</msg>
-<msg timestamp="20210104 10:24:50.034" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20210104 10:24:50.034" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:50.034" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/element/8977a516-3c60-42fd-919b-5c10d1b4f55d/click {"id": "8977a516-3c60-42fd-919b-5c10d1b4f55d"}</msg>
-<msg timestamp="20210104 10:24:50.081" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/element/8977a516-3c60-42fd-919b-5c10d1b4f55d/click HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:50.082" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:50.082" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:50.005" endtime="20210104 10:24:50.083"></status>
+<msg timestamp="20210104 11:15:38.602" level="TRACE">Arguments: [ 'LOG IN' ]</msg>
+<msg timestamp="20210104 11:15:38.602" level="INFO">Clicking button 'LOG IN'.</msg>
+<msg timestamp="20210104 11:15:38.603" level="DEBUG">GET http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/url {}</msg>
+<msg timestamp="20210104 11:15:38.606" level="DEBUG">http://127.0.0.1:53864 "GET /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/url HTTP/1.1" 200 40</msg>
+<msg timestamp="20210104 11:15:38.606" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.606" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements {"using": "xpath", "value": "//input[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or @src='LOG IN' or @src='http://mbc-admin.bliimo.com/LOG IN')]"}</msg>
+<msg timestamp="20210104 11:15:38.609" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20210104 11:15:38.610" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.610" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements {"using": "xpath", "value": "//button[(@id='LOG IN' or @name='LOG IN' or @value='LOG IN' or normalize-space(descendant-or-self::text())='LOG IN')]"}</msg>
+<msg timestamp="20210104 11:15:38.614" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210104 11:15:38.614" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.615" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/3c9b4a87-05ae-a24b-bcd1-9bdcecc81160/click {"id": "3c9b4a87-05ae-a24b-bcd1-9bdcecc81160"}</msg>
+<msg timestamp="20210104 11:15:38.840" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/element/3c9b4a87-05ae-a24b-bcd1-9bdcecc81160/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:38.841" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:38.841" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.602" endtime="20210104 11:15:38.841"></status>
 </kw>
 <kw name="Wait" library="resources">
-<msg timestamp="20210104 10:24:50.085" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:38.843" level="TRACE">Arguments: [  ]</msg>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${sleep_time}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:50.086" level="TRACE">Arguments: [ '5s' ]</msg>
-<msg timestamp="20210104 10:24:55.087" level="INFO">Slept 5 seconds</msg>
-<msg timestamp="20210104 10:24:55.087" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:50.086" endtime="20210104 10:24:55.088"></status>
+<msg timestamp="20210104 11:15:38.843" level="TRACE">Arguments: [ '5s' ]</msg>
+<msg timestamp="20210104 11:15:43.844" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20210104 11:15:43.845" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.843" endtime="20210104 11:15:43.845"></status>
 </kw>
-<msg timestamp="20210104 10:24:55.088" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:50.083" endtime="20210104 10:24:55.088"></status>
+<msg timestamp="20210104 11:15:43.845" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:38.842" endtime="20210104 11:15:43.845"></status>
 </kw>
 <kw name="Alert Should Be Present" library="SeleniumLibrary">
 <doc>Verifies that an alert is present and by default, accepts it.</doc>
 <arguments>
 <arg>Incorrect e-mail or password.</arg>
 </arguments>
-<msg timestamp="20210104 10:24:55.089" level="TRACE">Arguments: [ 'Incorrect e-mail or password.' ]</msg>
-<msg timestamp="20210104 10:24:55.089" level="DEBUG">GET http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/alert/text {}</msg>
-<msg timestamp="20210104 10:24:55.093" level="DEBUG">http://127.0.0.1:51331 "GET /session/d2cb0958d0f0d4213178b21d4af4370e/alert/text HTTP/1.1" 200 41</msg>
-<msg timestamp="20210104 10:24:55.093" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:55.094" level="DEBUG">GET http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/alert/text {}</msg>
-<msg timestamp="20210104 10:24:55.095" level="DEBUG">http://127.0.0.1:51331 "GET /session/d2cb0958d0f0d4213178b21d4af4370e/alert/text HTTP/1.1" 200 41</msg>
-<msg timestamp="20210104 10:24:55.096" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:55.096" level="DEBUG">POST http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e/alert/accept {}</msg>
-<msg timestamp="20210104 10:24:55.102" level="DEBUG">http://127.0.0.1:51331 "POST /session/d2cb0958d0f0d4213178b21d4af4370e/alert/accept HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:24:55.103" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:24:55.104" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:55.088" endtime="20210104 10:24:55.104"></status>
+<msg timestamp="20210104 11:15:43.846" level="TRACE">Arguments: [ 'Incorrect e-mail or password.' ]</msg>
+<msg timestamp="20210104 11:15:43.847" level="DEBUG">GET http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/alert/text {}</msg>
+<msg timestamp="20210104 11:15:43.852" level="DEBUG">http://127.0.0.1:53864 "GET /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/alert/text HTTP/1.1" 200 41</msg>
+<msg timestamp="20210104 11:15:43.853" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:43.853" level="DEBUG">GET http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/alert/text {}</msg>
+<msg timestamp="20210104 11:15:43.858" level="DEBUG">http://127.0.0.1:53864 "GET /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/alert/text HTTP/1.1" 200 41</msg>
+<msg timestamp="20210104 11:15:43.859" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:43.859" level="DEBUG">POST http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99/alert/accept {}</msg>
+<msg timestamp="20210104 11:15:44.116" level="DEBUG">http://127.0.0.1:53864 "POST /session/6e5e9a98-f6a9-b249-9285-dd453e634a99/alert/accept HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:44.117" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:44.117" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:43.846" endtime="20210104 11:15:44.118"></status>
 </kw>
 <kw name="Wait" library="resources">
-<msg timestamp="20210104 10:24:55.107" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:44.118" level="TRACE">Arguments: [  ]</msg>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${sleep_time}</arg>
 </arguments>
-<msg timestamp="20210104 10:24:55.109" level="TRACE">Arguments: [ '5s' ]</msg>
-<msg timestamp="20210104 10:25:00.112" level="INFO">Slept 5 seconds</msg>
-<msg timestamp="20210104 10:25:00.112" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:55.109" endtime="20210104 10:25:00.112"></status>
+<msg timestamp="20210104 11:15:44.119" level="TRACE">Arguments: [ '5s' ]</msg>
+<msg timestamp="20210104 11:15:49.120" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20210104 11:15:49.120" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:44.119" endtime="20210104 11:15:49.120"></status>
 </kw>
-<msg timestamp="20210104 10:25:00.112" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:24:55.105" endtime="20210104 10:25:00.112"></status>
+<msg timestamp="20210104 11:15:49.121" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:44.118" endtime="20210104 11:15:49.121"></status>
 </kw>
 <kw name="Close Browsers" library="resources">
-<msg timestamp="20210104 10:25:00.113" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:49.122" level="TRACE">Arguments: [  ]</msg>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<msg timestamp="20210104 10:25:00.114" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20210104 10:25:00.114" level="DEBUG">Closing all browsers.</msg>
-<msg timestamp="20210104 10:25:00.114" level="DEBUG">DELETE http://127.0.0.1:51331/session/d2cb0958d0f0d4213178b21d4af4370e {}</msg>
-<msg timestamp="20210104 10:25:00.188" level="DEBUG">http://127.0.0.1:51331 "DELETE /session/d2cb0958d0f0d4213178b21d4af4370e HTTP/1.1" 200 14</msg>
-<msg timestamp="20210104 10:25:00.189" level="DEBUG">Finished Request</msg>
-<msg timestamp="20210104 10:25:00.253" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:25:00.114" endtime="20210104 10:25:00.253"></status>
+<msg timestamp="20210104 11:15:49.122" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210104 11:15:49.123" level="DEBUG">Closing all browsers.</msg>
+<msg timestamp="20210104 11:15:49.123" level="DEBUG">DELETE http://127.0.0.1:53864/session/6e5e9a98-f6a9-b249-9285-dd453e634a99 {}</msg>
+<msg timestamp="20210104 11:15:49.765" level="DEBUG">http://127.0.0.1:53864 "DELETE /session/6e5e9a98-f6a9-b249-9285-dd453e634a99 HTTP/1.1" 200 14</msg>
+<msg timestamp="20210104 11:15:49.765" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210104 11:15:49.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:49.122" endtime="20210104 11:15:49.767"></status>
 </kw>
-<msg timestamp="20210104 10:25:00.254" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20210104 10:25:00.113" endtime="20210104 10:25:00.254"></status>
+<msg timestamp="20210104 11:15:49.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210104 11:15:49.121" endtime="20210104 11:15:49.767"></status>
 </kw>
-<status status="PASS" starttime="20210104 10:24:43.489" endtime="20210104 10:25:00.255" critical="yes"></status>
+<status status="PASS" starttime="20210104 11:15:30.543" endtime="20210104 11:15:49.768" critical="yes"></status>
 </test>
 <doc>A test case for admin is able to login
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" starttime="20210104 10:24:30.119" endtime="20210104 10:25:00.259"></status>
+<status status="PASS" starttime="20210104 11:15:06.427" endtime="20210104 11:15:49.769"></status>
 </suite>
 <statistics>
 <total>
@@ -342,7 +434,7 @@ the imported resource file.</doc>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" id="s1" name="Dj Login">Dj Login</stat>
+<stat pass="2" fail="0" id="s1" name="Admin Login">Admin Login</stat>
 </suite>
 </statistics>
 <errors>

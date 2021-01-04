@@ -14,6 +14,11 @@ The Admin should be able to see Homepage.
     Input Text      xpath://*[@id="root"]/div/form/div[1]/div[2]/input      ${ADMIN_PASSWORD}
     Click Button    LOG IN
     Wait
+    Click Button      xpath://*[@id="root"]/div/div[1]/div[2]/button
+    Wait
+    Click Button        Yes
+    Wait
+    Location Should Be      ${URL}   
     Close Browsers
 
 The Admin should be able to see alert "Incorrect e-mail or password." (negative testing).

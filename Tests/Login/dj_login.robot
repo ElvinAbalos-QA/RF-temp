@@ -1,7 +1,7 @@
 
 
 *** Settings ***
-Documentation     A test case for admin is able to login
+Documentation     A test case for dj is able to login
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
@@ -16,6 +16,11 @@ The DJ should be able to see Homepage.
     Input Text      xpath://*[@id="root"]/div/form/div[1]/div[2]/input      ${DJ_PASSWORD}
     Click Button    LOG IN
     Wait
+    Click Button      xpath://*[@id="root"]/div/div[1]/div[2]/button
+    Wait
+    Click Button        Yes
+    Wait
+    Location Should Be      ${URL}   
     Close Browsers
 
 The DJ should be able to see alert "Incorrect e-mail or password." (negative testing).
