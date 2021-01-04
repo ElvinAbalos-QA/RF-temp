@@ -10,6 +10,14 @@ Open MBC Web Page
 Wait
     Sleep    ${sleep_time}    
 
+Logout  
+    Wait Until Element Is Visible       xpath://*[@id="root"]/div/div[1]/div[2]/button
+    Click Button      xpath://*[@id="root"]/div/div[1]/div[2]/button
+    Wait
+    Click Button        Yes
+    Wait
+    Location Should Be      ${URL}     
+
 Close Browsers
     Close All Browsers
 
