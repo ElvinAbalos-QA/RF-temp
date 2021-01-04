@@ -10,6 +10,8 @@ Resource        ../../Resources/resources.robot
 
 *** Test Cases ***
 The DJ should be able to see Homepage.
+    [TAGS]    dj, login, positive
+
     Open MBC Web Page   
     Title Should Be     ${TITLE} 
     Input Text      xpath://*[@id="root"]/div/form/div[1]/div[1]/input      ${DJ_EMAIL}
@@ -24,6 +26,8 @@ The DJ should be able to see Homepage.
     Close Browsers
 
 The DJ should be able to see alert "Incorrect e-mail or password." (negative testing).
+    [TAGS]    dj, login, negative
+
     Open MBC Web Page   
     Title Should Be     ${TITLE} 
     Input Text      xpath://*[@id="root"]/div/form/div[1]/div[1]/input      ${ADMIN_INVALID_EMAIL}
